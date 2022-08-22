@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+<script>
+
+    const url = "https://rpc-mumbai.maticvigil.com" //Polygon Mumbai Testnet
+
+	const web3 = new Web3(new Web3.providers.HttpProvider(url));
+
+web3.eth.getPastLogs({fromBlock:web3.utils.toHex('27728727'),address:'0xe6813d762fcccb7cad16b8ea652c4ef06a111583'})
+.then(bloG => {
+  bloG.forEach(posT => {
+
+	      web3.eth.getBlock(posT.blockNumber).then(function(timee){document.write("<hr>" + new Date(timee.timestamp * 1000)+ "<br><br>" + web3.utils.hexToAscii(posT.data) + "<hr>")});
+
+  });
+}).catch(err => console.log("getPastLogs failed", err));
+
+</script>
+
+</html>
