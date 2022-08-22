@@ -1,7 +1,8 @@
 // SPDX-License-Identifier: The Unlicense
 
 // Solidity program for simple micro blogging
-pragma solidity ^0.4.21;
+
+pragma solidity ^0.4.26;
 
 contract mBlogger {
   
